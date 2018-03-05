@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_559583_4xid80c8vi1f9a4i.css">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/plug/layui/css/layui.css">
+    <style>
+        #userList {
+            width: 390px;
+            height: 300px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.2);
+            right: 0;
+            top: 60px;
+            display: none;
+            z-index: 999;
+            
+        }
+    </style>
+</head>
+<body>
+<!--[if lte IE 8]>
+<div class="text-center padding-vertical-50 bg-blue-grey-100"
+     style="text-align:center;width: 100%;height:100px;background-color: #f2dede;font-size: 20px;line-height: 100px;color:#a94442">
+    <p class="browserupgrade font-size-18">你正在使用一个<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/"
+                                                                              target="_blank">升级您的浏览器</a>，以提高您的体验。</p>
+</div>
+<script></script>
+<![endif]-->
+<section class="box" style="z-index: 10">
+    <!--导航栏-->
+    <header class=" layui-col-md12 clearfix">
+        <div class="">
+            <img src="./asset/img/home/log.png" alt="历下投资服务平台">
+        </div>
+        <div>
+            <ul id="moduleList">
+                <li data-url="backStage/1.html">
+                    客户管理
+                </li>
+                <li data-url="backStage/scheduleJob.html">
+                    定时任务
+                </li>
+                <li>
+                    客户管理
+                </li>
+                <li>
+                    客户管理
+                </li>
+                <li>
+                    客户管理
+                </li>
+                <li>
+                    客户管理
+                </li>
+                <li>
+                    客户管理
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div class="user" style="width:100%;text-align: left">
+                <div class="userImg" style="width: 100px;cursor: pointer;">
+                    <img src="./asset/img/home/user3-128x128.jpg" alt="666">
+                    <span>Admin</span>
+                    <i class="rotate"></i>
+                </div>
+                |
+                <i class="I icon-shouye"></i>
+                <i class="I icon-xiaoxi"></i>
+            </div>
+        </div>
+    </header>
+
+    <!--登录人信息-->
+    <div id="userList">
+
+    </div>
+
+    <!--主体-->
+    <section class="content_body layui-col-md12" id="content_body">
+
+    </section>
+</section>
+<!--跳转主模块时弹框-->
+<div id="menu" class="box">
+
+</div>
+</body>
+
+<script src="./asset/plug/jquery/jquery-2.2.3.min.js"></script>
+<script src="./asset/js/common/base.js"></script>
+<script src="./asset/plug/layui/layui.js"></script>
+<script>
+
+    //弹框组件
+    layui.use("layer",function(){
+        window.layer = layui.layer;
+    })
+
+    //table组件
+    layui.use("table",function(){
+        window.layuiTable = layui.table;
+    })
+
+        //点击主页按钮时弹出跳转按钮页面，并添加关闭按钮
+        $(".icon-shouye").click(function () {
+            $("#menu").show().load('./menu.html', function () {
+                $(this).append('<span class="I icon-guanbi closeBtn"></span>')
+            })
+        })
+
+        $(".userImg").click(function () {
+            //window.location.href = B.HTML_PATH + "login.html"
+            $("#userList").toggle()
+        })
+
+        $("#moduleList").on("click", "li", function (e) {
+            e.preventDefault();
+            $("#content_body").load('views/' + $(this).data("url"))
+        })
+
+        //点击关闭按钮时跳转页面消失
+        $(document).on("click", ".icon-guanbi", function () {
+            $("#menu").hide()
+        })
+</script>
+</html>

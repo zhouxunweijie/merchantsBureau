@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_559583_4xid80c8vi1f9a4i.css">
+    <!--style.css编译后且合并后的文件-->
+    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/plug/layui/css/layui.css">
+</head>
+<body>
+<!--[if lte IE 8]>
+<div class="text-center padding-vertical-50 bg-blue-grey-100" style="text-align:center;width: 100%;height:100px;background-color: #f2dede;font-size: 20px;line-height: 100px;color:#a94442">
+    <p class="browserupgrade font-size-18">你正在使用一个<strong>过时</strong>的浏览器。请<a href="http://browsehappy.com/" target="_blank">升级您的浏览器</a>，以提高您的体验。</p>
+</div>
+<script ></script>
+<![endif]-->
+<canvas id="canvas" height="100%" width="100%"></canvas>
+<div class="content lineCenter">
+
+    <div class="clearfix contentBox" style="line-height: 100%">
+        <!--环形图-->
+        <div class="fl">
+            <img class="backgroundLogo" src="asset/img/login/Lo.png"/>
+        </div>
+        <!--招商引资信息服务平台-->
+        <img src="asset/img/login/logo.png" class="log">
+        <!--登陆表单及主模块-->
+        <div class="fl menuList">
+            <div class="loginBox">
+                <h5>用户登录 | <span>User Login</span></h5>
+                <form action="" method="post">
+                    <div class="inputGroup">
+                        <span class="inputGroupAddon">
+                            <i class="I icon-denglu"></i>
+                        </span>
+                        <input class="input" type="text" placeholder="用户名称"/>
+                    </div>
+                    <div class="inputGroup">
+                        <span class="inputGroupAddon">
+                            <i class="I icon-mima"></i>
+                        </span>
+                        <input class="input" type="text" placeholder="用户密码"/>
+                    </div>
+                    <div id="LoginCode" class=" clearfix">
+                        <div style="width: 130px">
+                            <div class="inputGroup">
+                                <span class="inputGroupAddon">
+                                    <i class="I icon-yanzhengma"></i>
+                                </span>
+                                <input class="input" type="text" placeholder="验证码"/>
+                            </div>
+                        </div>
+                        <div class="code">
+                            <div>
+
+                            </div>
+                            <p>
+                                看不清
+                                换一张
+                            </p>
+                        </div>
+                    </div>
+                </form>
+                <div style="margin-top: 18px;text-align: center">
+                    <span class="layui-btn layui-btn-normal" id="LoginUser">登录</span>
+                    <p style="color:#5bc8e8;margin-left:24px;margin-top:10px;display: none">验证中，请稍后。。。</p>
+                </div>
+            </div>
+            <div class="loginBoxList">
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="asset/plug/jquery/jquery-2.2.3.min.js"></script>
+<script src="asset/js/common/base.js"></script>
+<script src="asset/plug/canvasStar/canvasstar.js"></script>
+<script>
+        //初始化登录页背景动画
+        var CanvasStar = new CanvasStar;
+        CanvasStar.init();
+
+        //menu为公用模块，登录时默认加载一次
+        $(".loginBoxList").load("./menu.html");
+
+
+        //点击登录时判断当前登录的账号密码是否正确，来更改登录的文字提示和动画的实现
+        $("#LoginUser").on("click",function(){
+            $("#LoginUser").text("").addClass("login_box").next().css("display","block");
+            setTimeout(function(){
+                $(".loginBox").addClass("hideBox");
+                setInterval(function(){
+                    $(".loginBox").hide()
+                },750)
+                $(".loginBoxList").addClass("showBox")
+            },2000)
+        });
+
+</script>
+</html>
