@@ -1,0 +1,206 @@
+<link rel="stylesheet" href="./asset/plug/iconFont/iconfont.css">
+<meta charset="UTF-8">
+<style>
+
+    #menuList{
+        position: relative;
+        width: 520px;
+        height:370px;
+        display: block;
+        margin-top: 75px;
+    }
+    #menuList li{
+        position: absolute;
+        width: 140px;
+        height:120px;
+        display: block;
+        background: url("./asset/img/login/L.png") no-repeat;
+        background-size:cover;
+        cursor: pointer;
+    }
+    #menuList li i{
+        display: block;
+        font-size: 55px;
+        margin-top: 20px;
+        line-height:100%;
+        margin-left: 44px;
+        color: #26d1e5;
+    }
+    #menuList li:nth-child(1){
+        top: 63px;
+        left: 15px;
+    }
+    #menuList li:nth-child(2){
+        top: 0;
+        left: 120px;
+    }
+    #menuList li:nth-child(3){
+        top: 63px;
+        left: 360px
+    }
+    #menuList li:nth-child(4){
+        top: 0;
+        left: 254px;
+    }
+    #menuList li:nth-child(5){
+        top: 248px;
+        left: 254px;
+    }
+    #menuList li:nth-child(6){
+        top: 183px;
+        left: 360px;
+    }
+    #menuList li:nth-child(7){
+        top: 124px;
+        left: 188px;
+    }
+    #menuList li:nth-child(8){
+        top: 183px;
+        left: 15px;
+    }
+    #menuList li:nth-child(9){
+        top: 248px;
+        left: 120px;
+    }
+    #menuList li:hover{
+        animation: li_show 1s;
+        -moz-animation:  li_show 1s; /* Firefox 4 */
+        -webkit-animation:  li_show 1s; /* Safari 和 Chrome */
+        -o-animation:  li_show 1s; /* Opera */
+    }
+    #menuList li p{
+        height:16px;
+        text-align: center;
+        margin-top: 3px;
+        margin-left: 4px;
+        color:#d2effd;
+    }
+    .showBox{
+        animation: show-box 1s;
+        -moz-animation: show-box 1s; /* Firefox 4 */
+        -webkit-animation: show-box 1s; /* Safari 和 Chrome */
+        -o-animation: show-box 1s; /* Opera */
+        animation-fill-mode:both;
+        -moz-animation-fill-mode:both;
+        -webkit-animation-fill-mode:both;
+        -o-animation-fill-mode:both;
+        display: inline-block;
+    }
+    @keyframes li_show {
+        from{
+            transform: scale(1,1);
+            -moz-transform: scale(1,1); /* Firefox 4 */
+            -webkit-transform: scale(1,1); /* Safari 和 Chrome */
+            -o-transform: scale(1,1); /* Opera */
+        }
+        to{
+            transform: scale(1.1,1.1);
+            -moz-transform: scale(1.1,1.1); /* Firefox 4 */
+            -webkit-transform: scale(1.1,1.1); /* Safari 和 Chrome */
+            -o-transform: scale(1.1,1.1); /* Opera */
+        }
+    }
+    @-webkit-keyframes li_show {
+        from{
+            transform: scale(1,1);
+            -moz-transform: scale(1,1); /* Firefox 4 */
+            -webkit-transform: scale(1,1); /* Safari 和 Chrome */
+            -o-transform: scale(1,1); /* Opera */
+        }
+        to{
+            transform: scale(1.1,1.1);
+            -moz-transform: scale(1.1,1.1); /* Firefox 4 */
+            -webkit-transform: scale(1.1,1.1); /* Safari 和 Chrome */
+            -o-transform: scale(1.1,1.1); /* Opera */
+        }
+    }
+    @keyframes show-box {
+        0%{
+            transform: scale(0,0);
+            -moz-transform: scale(0,0); /* Firefox 4 */
+            -webkit-transform: scale(0,0); /* Safari 和 Chrome */
+            -o-transform: scale(0,0); /* Opera */
+        }
+        100%{
+            transform: scale(1,1);
+            -moz-transform: scale(1,1); /* Firefox 4 */
+            -webkit-transform: scale(1,1); /* Safari 和 Chrome */
+            -o-transform: scale(1,1); /* Opera */
+        }
+    }
+    @-webkit-keyframes show-box {
+        0%{
+            transform: scale(0,0);
+            -moz-transform: scale(0,0); /* Firefox 4 */
+            -webkit-transform: scale(0,0); /* Safari 和 Chrome */
+            -o-transform: scale(0,0); /* Opera */
+        }
+        100%{
+            transform: scale(1,1);
+            -moz-transform: scale(1,1); /* Firefox 4 */
+            -webkit-transform: scale(1,1); /* Safari 和 Chrome */
+            -o-transform: scale(1,1); /* Opera */
+        }
+    }
+    @-moz-keyframes show-box {
+        0%{
+            transform: scale(0,0);
+            -moz-transform: scale(0,0); /* Firefox 4 */
+            -webkit-transform: scale(0,0); /* Safari 和 Chrome */
+            -o-transform: scale(0,0); /* Opera */
+        }
+        100%{
+            transform: scale(1,1);
+            -moz-transform: scale(1,1); /* Firefox 4 */
+            -webkit-transform: scale(1,1); /* Safari 和 Chrome */
+            -o-transform: scale(1,1); /* Opera */
+        }
+    }
+</style>
+<ul id="menuList">
+    <li>
+        <i class="icon iconfont icon-zhengce"></i>
+        <p>政策管理</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-building-automation"></i>
+        <p>楼宇管理</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-xiangmuguanli"></i>
+        <p>项目管理</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-icongl"></i>
+        <p>企业管理</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-jiancedianduibifenxi"></i>
+        <p>舆情分析</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-kaohejilu" style="margin-left: 48px"></i>
+        <p>考核分析</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-houtaiguanli"></i>
+        <p>后台管理</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-bangongyi"></i>
+        <p>办公服务</p>
+    </li>
+    <li>
+        <i class="icon iconfont icon-zhudaochanye-"></i>
+        <p>产业服务</p>
+    </li>
+</ul>
+<script src="./asset/plug/jquery/jquery-2.2.3.min.js"></script>
+<script>
+    //点击菜单按钮时跳转到home页
+    $("#menuList").on("click","li",function(e){
+        e.preventDefault();
+        //localStorage.setItem("moduleList",JSON.parse($(e.target).attr("moduleList")))
+        window.location.href = B.HTML_PATH + "home.html";
+    })
+</script>

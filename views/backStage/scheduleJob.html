@@ -1,0 +1,51 @@
+
+<section class="section_box">
+    <span class="body_header">楼宇管理<button id="toggle" class="layui-btn fr">切换</button></span>
+    <div class="body_content">
+        <div class="body_box body_box_left" id="_ele1">
+            <div class="promptBox">
+                <span>友情提示：</span>
+                <p>6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666</p>
+            </div>
+            <div class="tableGroup">
+                <div class="tooltip">
+                    <button class="layui-btn layui-btn-normal" id="add">
+                        <i class="I icon-jiajianzujianjiahao"></i>
+                        新增
+                    </button>
+                    <button class="layui-btn layui-btn-normal" id="edit">
+                        <i class="I icon-shouhuodizhiyebianji"></i>
+                        修改
+                    </button>
+                    <button class="layui-btn layui-btn-normal" id="search">
+                        <i class="I icon-sousuo"></i>
+                        检索
+                    </button>
+                </div>
+                <table id="scheduleJob" lay-filter="scheduleJob"></table>
+            </div>
+        </div>
+        <div class="body_box body_box_right" id="_ele2">
+            <div class="promptBox">
+                <span>友情提示：</span>
+                <p>6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666</p>
+            </div>
+            <div class="div_content">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--操作按钮模板-->
+<script type="text/html" id="scheduleJobBtn">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+
+    <!-- 这里同样支持 laytpl 语法，如： -->
+    {{#  if(d.auth > 2){ }}
+    <a class="layui-btn layui-btn-xs" lay-event="check">审核</a>
+    {{#  } }}
+</script>
+<script src="../../asset/js/app/scheduleJob.js"></script>

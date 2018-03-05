@@ -1,0 +1,51 @@
+
+<section class="section_box">
+    <span class="body_header">楼宇管理<button id="toggle" class="layui-btn fr">切换</button></span>
+    <div class="body_content">
+        <div class="body_box body_box_left" id="_ele1">
+            <div class="promptBox">
+                <span>友情提示：</span>
+                <p>6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666</p>
+            </div>
+            <div class="div_content">
+                <button id="test">
+                    <i class="layui-btn layui-btn-success">上传</i>
+                </button>
+            </div>
+        </div>
+        <div class="body_box body_box_right" id="_ele2">
+            <div class="promptBox">
+                <span>友情提示：</span>
+                <p>6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666</p>
+            </div>
+            <div class="div_content">
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var tag = 0;
+    $("#toggle").on("click",function(){
+        console.log("111")
+        var ele1 = $(".body_box_left");
+        var ele2 = $(".body_box_right");
+        console.log(ele1,ele2)
+        if(tag === 1){
+            tag = 0;
+            B.showBox(ele1,ele2)
+        }else{
+            tag = 1;
+            B.hideBox(ele1,ele2)
+        }
+    })
+
+    B.uploadXlsx({
+        el:"#test",
+        src:'http://47.92.90.212:8080/loveoffice/api/supplier/exportSupplierTemplate',
+        url:"http://192.168.1.212:8080/coldol/api/websiteImage/uploadImage",
+        uploadSuccess:function(path){
+            console.log(path)
+        }
+    })
+</script>
